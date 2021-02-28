@@ -1,20 +1,9 @@
-var msg = "hello world";
-console.log(msg);
-const https = require('https')
+var readlineSync = require('readline-sync');
 
-https.get('https://jobs.ksl.com/search/software-development', (resp) => {
-  let data = '';
+var input = readlineSync.question('What Year were you born?');
 
-  // A chunk of data has been received.
-  resp.on('data', (chunk) => {
-    data += chunk;
-  });
+var birthYear = parseInt(input);
+var currentYear = 2021
 
-  // The whole response has been received. Print out the result.
-  resp.on('end', () => {
-    console.log(data);
-  });
-
-}).on("error", (err) => {
-  console.log("Error: " + err.message);
-});
+var Age= currentYear - birthYear
+console.log("you are",Age )
